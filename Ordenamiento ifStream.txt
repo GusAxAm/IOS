@@ -1,0 +1,64 @@
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+#include <fstream>
+
+using namespace std;
+
+const char FileName[] = "archivo1.txt";
+
+int main(void){
+string linea;
+#include <iostream>
+#include <string.h>
+#include <fstream>
+#include <sstream>
+
+using namespace std;
+const char FileName[] = "archivo1.txt";
+
+int main(void){
+
+    string linea;
+    ifstream archivoEntrada;
+    int line = 0;
+    int c=0;
+    int pal = 0;
+    
+    archivoEntrada.open(FileName);
+
+ while(getline(archivoEntrada,linea)){
+        c+= linea.length();
+        line++;
+          stringstream lineStream(linea);
+            while (getline(lineStream, linea, ' ')) {
+                pal++;
+            }
+        
+        
+//        for(int i=0;i<=linea.length();i++){
+//            if( linea[i]!= ' ' && linea[i+1]!=' '){
+            //    pal = pal+1;
+          //  }
+        //}
+
+    }
+
+//  for(i = 0; i < fichero.lenght(); i++)
+//    for (j = 0; j < fichero.lenght() - 1; j++){
+//      i = j + 1;
+//      if(archivoEntrada[j] > archivoEntrada[i])
+//        aux = archivoEntrada[i];
+//        archivoEntrada[i] = archivoEntrada[i+1];
+//        archivoEntrada[i + 1] = aux;
+//    }
+   
+    cout << "Nombre del archivo: " <<FileName <<endl;
+    cout<< "numero de lineas = " <<line <<endl;
+    cout << "numero de caracteres = " << c << endl;
+    cout << "numero de palabras = "<< pal << endl;
+
+    archivoEntrada.close();
+    return 0;
+
+}
